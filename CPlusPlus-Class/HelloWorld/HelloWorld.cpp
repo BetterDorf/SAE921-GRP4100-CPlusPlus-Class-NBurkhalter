@@ -44,7 +44,8 @@ int main()
 	int money = STARTINGMONEY;
 
 	//Welcome the user
-	cout << "Welcome to dice betting thingy : THE GAME" << endl;
+	cout << "Welcome to dice betting thingy : THE GAME" << endl
+	<< "You have : " << STARTINGMONEY << endl;
 
 	while(true)
 	{
