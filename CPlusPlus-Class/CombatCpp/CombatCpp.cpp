@@ -18,6 +18,7 @@ std::mt19937 gen(rd());
 std::uniform_int_distribution<> attackDamageDist(MIN_ORC_DAMAGE, MAX_ORC_DAMAGE);
 std::uniform_int_distribution<> percentDist(1, 100);
 
+//from https://stackoverflow.com/questions/6486289/how-can-i-clear-console
 void Clear()
 {
 #if defined _WIN32
@@ -31,34 +32,23 @@ void Clear()
 #endif
 }
 
-bool waagh()
+bool do_waagh()
 {
-    if (percentDist(gen) <= WAAGHODDS)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return percentDist(gen) <= WAAGHODDS;
 }
 
 int theo_decision()
 {
-    int decision;
-    char answer;
+    int answer;
 
     while (true)
     {
         cout << "1: attaquer (1)\n2: se defendre (2)\n3: boire une potion (3)" << endl;
         cin >> answer;
 
-        switch (answer)
+        if (answer == 1 || answer == 2 || answer == 3)
         {
-        default:break;
-        case '1':return 1;
-        case '2':return 2;
-        case '3':return 3;
+            return answer;
         }
     }
 }
@@ -85,7 +75,7 @@ int main()
 	    /// Orc's turn
         cout << "-----\nTour de Grimgor\n---" << endl;
         damage = attackDamageDist(gen);
-        if (waagh())
+        if (do_waagh())
         {
             cout << "Grimgor s'enrage !" << endl;
             damage *= 2;
