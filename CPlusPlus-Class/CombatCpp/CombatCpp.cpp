@@ -1,11 +1,13 @@
 #include <iostream>
-#include <initializer_list>
 #include <random>
 
 using namespace std;
 
-int const MIN_ORC_DAMAGE = 2;
-int const MAX_ORC_DAMAGE = 8;
+int const ORC_HEALTH = 20;
+int const THEO_HEALTH = 22;
+
+int const MIN_ORC_DAMAGE = 1;
+int const MAX_ORC_DAMAGE = 9;
 int const WAAGHODDS = 10;
 
 int const THEO_DAMAGE = 5;
@@ -62,8 +64,8 @@ void show_status(float theoHealth, float orcHealth)
 int main()
 {
     //initialize the healths
-    float theoHealth = 20;
-    float orcHealth = 20;
+    float theoHealth = THEO_HEALTH;
+    float orcHealth = ORC_HEALTH;
 
     bool win = false;
     bool defend = false;
