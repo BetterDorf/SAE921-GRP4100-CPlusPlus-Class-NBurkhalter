@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-using namespace std;
+using namespace std;  
 
 //haha reference
 int const STARTING_MONEY = 413;
