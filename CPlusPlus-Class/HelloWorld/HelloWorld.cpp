@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int const STARTINGMONEY = 413;
+int const STARTING_MONEY = 413;
 
 int roll_dice()
 {
