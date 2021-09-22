@@ -169,6 +169,7 @@ int checkConsecutive(std::array<Value, CARDS_TO_DRAW> values)
 
 void printHandValue(std::array<Value, CARDS_TO_DRAW> valuesDrawn, std::array<Suit, CARDS_TO_DRAW> suitsDrawn)
 {
+    std::cout << "----" << std::endl;
 	//register both straight and flushes
     bool flush = true;
     Suit suitOfHand = suitsDrawn.at(0);
@@ -223,6 +224,11 @@ void printHandValue(std::array<Value, CARDS_TO_DRAW> valuesDrawn, std::array<Sui
             mostRepeats = repeats;
             mostRepeatedValue = card;
         }
+    }
+
+    if (mostRepeats == 5)
+    {
+		std::cout << "Technically the program didn't work but you cheated so that's only fair" << std::endl;
     }
 
     //Check if there is a four of a kind
@@ -370,7 +376,7 @@ int main()
             cardsDrawn.at(card) = cardToDraw;
 
             //Add the corresponding values and suit
-        	valuesDrawn.at(card) = values.at(cardToDraw);
+            valuesDrawn.at(card) = values.at(cardToDraw);
             suitsDrawn.at(card) = suits.at(cardToDraw);
         }
 
