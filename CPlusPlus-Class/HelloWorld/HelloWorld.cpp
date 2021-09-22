@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//haha reference
 int const STARTING_MONEY = 413;
 
 int roll_dice()
@@ -41,11 +42,11 @@ int main()
 	srand(time(nullptr));
 
 	//initialize the money
-	int money = STARTINGMONEY;
+	int money = STARTING_MONEY;
 
 	//Welcome the user
 	cout << "Welcome to dice betting thingy : THE GAME" << endl
-	<< "You have : " << STARTINGMONEY << endl;
+	<< "You have : " << STARTING_MONEY << endl;
 
 	while(true)
 	{
