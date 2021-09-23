@@ -7,7 +7,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorld", "HelloWorld\He
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CombatCpp", "CombatCpp\CombatCpp.vcxproj", "{ED1C9893-1D17-4DA2-8026-7B4630F386E5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PokerHandDealer", "PokerHandDealer\PokerHandDealer.vcxproj", "{E26B7E31-8F88-4F65-ABA6-2087C40878D7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1.02 - PokerHandDealer - formative", "PokerHandDealer\PokerHandDealer.vcxproj", "{E26B7E31-8F88-4F65-ABA6-2087C40878D7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01.02 - exo - strings -1", "01.02 - exo - strings -1\01.02 - exo - strings -1.vcxproj", "{561FEDF4-58A8-433B-8E5C-E6D640B17927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{E26B7E31-8F88-4F65-ABA6-2087C40878D7}.Release|x64.Build.0 = Release|x64
 		{E26B7E31-8F88-4F65-ABA6-2087C40878D7}.Release|x86.ActiveCfg = Release|Win32
 		{E26B7E31-8F88-4F65-ABA6-2087C40878D7}.Release|x86.Build.0 = Release|Win32
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Debug|x64.ActiveCfg = Debug|x64
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Debug|x64.Build.0 = Debug|x64
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Debug|x86.ActiveCfg = Debug|Win32
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Debug|x86.Build.0 = Debug|Win32
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Release|x64.ActiveCfg = Release|x64
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Release|x64.Build.0 = Release|x64
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Release|x86.ActiveCfg = Release|Win32
+		{561FEDF4-58A8-433B-8E5C-E6D640B17927}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
