@@ -202,20 +202,41 @@ int main()
     message = "Since it takes so long to travel and that you're currently in a safe \"space\"\n"
 		"(you don't actually know if what you are currently in qualifies as space)\n"
 		"you should order a special tool that would arrive in the same timeframe as you, if not a bit behind.\n\n"
-		"You open your laptop to check on THE DARK NET (Trademark) for what they have in store.\n\n"
-		"WELCOME [Name] TO THE DARK NET (TRADEMARK)\nTO REWARD YOUR FIDELITY YOUR NEXT PURCHASE WILL BE ENTIRELY FREE (EXCLUDING DELIVERY)\n\n"
+		"You open your laptop to check on THE DARK NET (trademarked) for what they have in store.\n\n"
+		"WELCOME [Name] TO THE DARK NET (trademarked)\nTO REWARD YOUR FIDELITY YOUR NEXT PURCHASE WILL BE ENTIRELY FREE (EXCLUDING DELIVERY)\n\n"
 		"Well, that's convenient.\nNow, what do we want to get?\n\n"
 		"(1) SPACE-WARP GRENADE\n(2) SHORT-RANGE TELEPORTER (ONE-USE ONLY)\n(3) STRANGE-MATTER KNIFE\n (4) PLUSHIE OF A PIG MADE OUT OF SALAD\n"
 		"(5) NOTHING, I AM TOO DUMB TO SHOP HERE";
     cout << replaceValue(message, name) << endl;
     cin >> choice;
+
+    // Record the user's choice
     switch (choice)
     {
-    case 5:
-
+	    case 1: cout << "SPACE WARPING GRENADE ORDERED. DELIVERY WITHIN ONE (1) BUSINESS YEAR" << endl;
+	        tool = Tool::Grenade;
+	        break;
+	    case 2: cout << "SHORT-RANGE TELEPORTER ORDERED. DELIVERY WITHIN ONE (1) BUSINESS YEAR" << endl;
+	        tool = Tool::Teleporter;
+	        break;
+	    case 3: cout << "EXTREMELY UNSTABLE KNIFE WITH STRANGE MATTER BLADE ORDERED. DELIVERY WITHIN ONE (1) BUSINESS YEAR" << endl;
+	        tool = Tool::Knife;
+	        break;
+	    case 4: cout << "INCREDIBLY USELESS PLUSHIE ORDERED. DELIVERY WITHIN ONE (1) BUSINESS YEAR" << endl << "WHY DO WE SELL THOSE?" << endl;
+	        tool = Tool::UselessPlushie;
+	        break;
+	    case 5:
+	    default:
+            cout << "NOTHING WAS ORDERED... YOU MUST BE DAFT" << endl;
+	        tool = Tool::None;
+	        break;
     }
 
-    //Implant knowledge
+    //Exit the space shop
+    cout << "THANK YOU FOR SHOPPING AT DARKNET (trademarked)." << endl;
+
+    //end the chapter
+
 #pragma endregion
 
 #pragma region Chapter2_Infiltration_TODO
