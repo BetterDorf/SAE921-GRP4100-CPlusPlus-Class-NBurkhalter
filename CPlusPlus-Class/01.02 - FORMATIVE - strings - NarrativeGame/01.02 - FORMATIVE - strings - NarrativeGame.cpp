@@ -682,7 +682,7 @@ int main()
         if (best_friend == Friend::Lead_Scientist)
             cout << replaceValue("[Name]?", name);
         else
-            cout << "Who are you?";
+            cout << "Who are you?" << endl;
 
         //talk or fight
         do
@@ -783,6 +783,37 @@ int main()
 	#pragma endregion
 
 	#pragma region Chapter6_Conclusion
+        chapter("-- CONCLUSION --");
+
+        switch (ending)
+        {
+	        case Ending::idealist:
+                cout << "And so you remain hidden in the station until your good friend Niou Ton finishes his great work.\n"
+        			"One particular day, he wakes you up and you know that it is the time. You both leave everything behind and move to a neutral space.\n"
+        			"Though not 'everything', you did take every single thing that was necessary for the black hole project to run.\n"
+        			"It's a rough decade until you manage to finish your initial vision and share universally the technology, ensuring near-immortality\n"
+        			"to intelligent life. Without you, he would have been assassinated a dozen times over.\n"
+        			"It was truly a chance encounter that changed the universe forever." << endl;
+                break;
+	        case Ending::loyalist: 
+                cout << "You return to the Federation doubly victorious.\n"
+        				"Your missions were supposed to be secret but word spreads nonetheless, you're a hero to some, and the avatar of a police state\n"
+        				"[Redacted]\n"
+        				"In any case, your name, [Redacted] shall go down in history as the one who brought the ultimate weapon to the Federation\n."
+        				"Allowing it to finally [Redacted].\n"
+        				"Who could have guessed that [Redacted][Redacted][Redacted][Redacted][Redacted][Redacted][Redacted][Redacted]" << endl;
+                break;
+	        case Ending::sacrifice:
+                cout << "It is not known how nor why.\n"
+        				"All that exists are speculations.\n"
+        				"But the fact is that experiments conducted by [Redacted] on the theoretical technology [Redacted] somehow triggered an explosion.\n"
+        				"It was the first, it was the last of its kind. Several orders of magnitude greater than a supernova.\n"
+        				"Even if recorded history forgot the circumstance, the casual observer peering into the night sky, will not fail to note that\n"
+        				"in the magnificent web of stars, there is, a giant hole." << endl;
+                break;
+        }
+
+        cout << "THE END!";
 
         break;
 	#pragma endregion
