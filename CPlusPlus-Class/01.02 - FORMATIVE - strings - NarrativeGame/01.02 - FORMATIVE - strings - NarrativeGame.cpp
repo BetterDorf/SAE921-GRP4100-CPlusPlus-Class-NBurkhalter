@@ -408,8 +408,8 @@ int main()
 
         do
         {
-            cout << "(1) Elena Volt : Physicist working on the black hole project\n"
-                "(2) Kar Kat : SOLDIER WHO ONLY SPEAKS IN CAPS LOCK\n"
+            cout << "(1) Elena Volt : Physicist working on the black hole project.\n"
+                "(2) Kar Kat : SOLDIER WHO ONLY SPEAKS IN CAPS LOCK.\n"
         		"(3) Joe Boso : A janitor like you, except he's actually a janitor.\n"
         		"(4) Niou Ton : A very excentric scientist that leads the research on the black hole project."
         		<< endl;
@@ -814,6 +814,10 @@ int main()
         }
 
         cout << "THE END!";
+
+        printSpace();
+        cout << "Press any letter to exit the program" << endl;
+        cin >> answer;
 
         break;
 	#pragma endregion
