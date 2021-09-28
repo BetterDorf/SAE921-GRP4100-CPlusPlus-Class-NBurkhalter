@@ -179,7 +179,7 @@ int main()
 	            specie.value = "human";
 	            break;
 	        case 3:
-	            name.value = "Whilfghy";
+	            name.value = "Whifghy";
 	            birth_place.value = "The Sector SD/F67";
 	            date.value = "[Redacted]";
 	            ship_type.value = "bioship";
