@@ -758,7 +758,7 @@ int main()
             		"You steal everything that there is to be stolen and set the generator to explode in an hour.\n"
             		"It was, in fact, remarkably easy to turn the generator into a bomb, you thought to yourself as you hopped onto a mining ship.\n"
             		"This mission wasn't too hard, you think, just had to pick the right tools." << endl;
-                ending = Ending::sacrifice;
+                ending = Ending::loyalist;
             }
             else if (plan == Plan::rig)
             {
