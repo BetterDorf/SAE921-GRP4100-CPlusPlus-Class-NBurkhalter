@@ -27,6 +27,15 @@ enum class Friend
     None
 };
 
+enum class Plan
+{
+	guards,
+    teleporter,
+    rig,
+    sneak,
+    none
+};
+
 string replaceValue(string original, Data replacement)
 {
     std::string thingToReplace = replacement.placeholder;
@@ -108,6 +117,7 @@ int main()
     specie.placeholder = "[Specie]";
 #pragma endregion
 
+    //Loop as long as player didn't win and wants to keep playing
 	while (true)
 	{
 	#pragma region Char_choice
@@ -459,26 +469,111 @@ int main()
         cout << "You aren't known to fail missions, so it's just a matter of how you'll do it." << endl;
 	#pragma endregion
 
-	#pragma region Chapter4_Action_TODO
-        chapter("Chapter 4 - Action");
+        Plan plan = Plan::none;
+
+	#pragma region Chapter4_Plan
+        chapter("Chapter 4 - Plan");
 
         //Decision on course of action
-
-        //Struggle to win
-
-	#pragma endregion
-
-	#pragma region Chapter5_Conclusion_TODO
-
-	#pragma endregion
-
-        //End the game and ask if they want to play again
-        printSpace();
-        cout << "You died.\n(Or had a sort of similar fate, i.e. you lost)\nDo you want to play again?(Y/N)" << endl;
-        cin >> answer;
-        if (answer != "Y")
+        cout << replaceValue("What course of action will [Name] take?", name) << endl;
+        do
         {
-	        break;
-        }
+            do
+            {
+                cout << "\n(1) : Inform the guards that something dangerous will happen on a certain date so that they are away from the main research project.\n"
+                    "(2) : Teleport yourself in the schematics room, then out and figure something out to sabotage the generator so that it blows up.\n"
+                    "(3) : Use your special grenade to blow up the station after having stolen the schematics.\n"
+                    "(4) : Just sneak in like you normally do, steal the plan, blow up the place." << endl;
+                cin >> choice;
+            } while (choice < 1 || choice > 5);
+
+            switch (choice)
+            {
+            case 1:
+                // Check that scenario is possible
+                if (best_friend != Friend::Soldier)
+                {
+                    cout << "The soldiers don't really believe you." << endl;
+                    break;
+                }
+
+                cout << "You entrust your buddy, who just so happens to work as a guard for the big project, with critical information regarding...\n"
+                    "A vague threat?\n"
+                    "You really don't know what to tell him, but he sorts of fill-in the blanks and ALERT HIS ENTIRE SQUADRON OF THE DANGER.\n"
+                    "This should make it easier." << endl;
+                plan = Plan::guards;
+                break;
+            case 2:
+                //check for tool
+                if (tool != Tool::Teleporter)
+                {
+                    cout << "You don't own a teleporter, how are you planning on teleporting around without it?" << endl;
+                    break;
+                }
+
+                cout << "This short-range teleporter is great and all, but it was poorly coded, it only uses a single reference frame.\n"
+                    "And since it hasn't been changed from the day of its conception, you'll have to do it yourself. Can't be too hard.\n"
+                    "But what do all of these numbers mean?" << endl;
+
+                //check for friend
+                if (best_friend != Friend::Scientist)
+                {
+                    cout << "Despite your best efforts, you couldn't manage to calibrate the device, it's simply too complex for you.\n"
+                        "To add to your disappointment, no one you know has both the time and the knowledge to help you calibrate it.\n"
+                        "In its current state, using it for even a short teleportation would land you practically anywhere around the station.\n"
+                        "The odds of killing yourself with it are just to great." << endl;
+                    break;
+                }
+
+                cout << "Luckily, your friend Elena has some spare time. You frame these equations as \"recreational exercises\". She's happy to help\n"
+                    "With her at your side, despite her insistence on \"not revealing the solution\", you manage to crack it!\n"
+                    "Walls are now a mere suggestion.\n"
+                    "A shame she has to blow up too." << endl;
+                plan = Plan::teleporter;
+                break;
+            case 3:
+                // check for the item
+                if (tool != Tool::Grenade)
+                {
+                    cout << "Well you don't really have a cool space warping grenade that could do that, now do you?" << endl;
+                    break;
+                }
+
+                cout << "This will work perfectly. Since the grenade has a bit of an arming time, you set it up underneath the generator.\n"
+                    "It beeps slightly and you can feel gravity shifting around it. How cool." << endl;
+                plan = Plan::rig;
+                break;
+
+            case 4:
+                //always works
+                cout << "Yes, the usual approach should work, you'll just sneakily advance, probably in the vents, then you'll complete the objective.\n"
+                    "Simple." << endl;
+                plan = Plan::sneak;
+                break;
+            }
+
+        } while (plan == Plan::none);
+
+        cout << "Now you're ready." << endl;
+	#pragma endregion
+
+	#pragma region Chapter5_Action_TODO
+	        chapter("Chapter 5 - Action");
+	#pragma endregion
+
+	#pragma region Chapter6_Conclusion_TODO
+
+	#pragma endregion
+
+	#pragma region GameOver
+	        //End the game and ask if they want to play again
+	        printSpace();
+	        cout << "You died.\n(Or had a sort of similar fate, i.e. you lost)\nDo you want to play again?(Y/N)" << endl;
+	        cin >> answer;
+	        if (answer != "Y")
+	        {
+	            break;
+	        }
+	#pragma endregion
 	}
 }
