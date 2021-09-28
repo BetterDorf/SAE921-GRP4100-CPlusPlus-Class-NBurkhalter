@@ -797,9 +797,9 @@ int main()
                 break;
 	        case Ending::loyalist: 
                 cout << "You return to the Federation doubly victorious.\n"
-        				"Your missions were supposed to be secret but word spreads nonetheless, you're a hero to some, and the avatar of a police state\n"
+        				"Your missions were supposed to be secret but word spread nonetheless, you're a hero to some, and the avatar of a police state\n"
         				"[Redacted]\n"
-        				"In any case, your name, [Redacted] shall go down in history as the one who brought the ultimate weapon to the Federation\n."
+        				"In any case, your name, [Redacted] shall go down in history as the one who brought the ultimate weapon to the Federation.\n"
         				"Allowing it to finally [Redacted].\n"
         				"Who could have guessed that [Redacted][Redacted][Redacted][Redacted][Redacted][Redacted][Redacted][Redacted]" << endl;
                 break;
@@ -812,6 +812,8 @@ int main()
         				"in the magnificent web of stars, there is, a giant hole." << endl;
                 break;
         }
+
+        printSpace();
 
         cout << "THE END!";
 
