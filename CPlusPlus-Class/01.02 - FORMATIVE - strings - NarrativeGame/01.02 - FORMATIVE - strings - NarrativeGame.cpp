@@ -51,7 +51,7 @@ string replaceValue(string original, Data replacement)
     int pos = 0;
     while (true)
     {
-        pos = original.find(thingToReplace);
+        pos = (int) original.find(thingToReplace);
 
         if (pos < 0 || pos >= original.length())
             break;
@@ -297,7 +297,7 @@ int main()
         message = "We can take the opportunity, while [Name] is asleep, to skip ahead quite a bit and take a look at this station.\n"
             "Shifting our focus out of the [Ship_type], we can zoom across a few lightyears worth of mostly empty space to arrive instanteanously.\n"
             "Truly, this is a huge station, it can and does provide for a million [Specie]s as it loosely orbit [Place] from quite a distance.\n"
-            "This station is dull metallic white (courtesy of the local asteroids that were used in its construction) and resembles a web of corridors\n"
+            "This station is a dull metallic white (courtesy of the local asteroids that were used in its construction) and resembles a web of corridors\n"
             "meeting at large spherical rooms.\n"
             "As outside observers, we could reason a guess that this is a very advanced [Specie] research\n"
             "belonging to the most well-known WEAPON SELLER operating outside the federation.\n"
