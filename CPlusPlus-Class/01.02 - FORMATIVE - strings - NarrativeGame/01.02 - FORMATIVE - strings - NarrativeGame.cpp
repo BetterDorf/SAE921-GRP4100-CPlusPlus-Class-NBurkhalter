@@ -36,6 +36,13 @@ enum class Plan
     none
 };
 
+enum class Ending
+{
+	idealist,
+    loyalist,
+    sacrifice
+};
+
 string replaceValue(string original, Data replacement)
 {
     std::string thingToReplace = replacement.placeholder;
@@ -87,6 +94,20 @@ void chapter(string chapter_message)
     printSpace();
 }
 
+bool playAgain()
+{
+    string answer;
+    //End the game and ask if they want to play again
+    printSpace();
+    cout << "You died.\n(Or had a sort of similar fate, i.e. you lost)\nDo you want to play again?(Y/N)" << endl;
+    cin >> answer;
+    if (answer != "Y")
+    {
+        return false;
+    }
+    return true;
+}
+
 //call replace value on all types of data
 string overkillReplace(string original)
 {
@@ -118,7 +139,7 @@ int main()
 #pragma endregion
 
     //Loop as long as player didn't win and wants to keep playing
-	while (true)
+	do
 	{
 	#pragma region Char_choice
 	        //Welcome the user
@@ -228,7 +249,7 @@ int main()
             "You open your laptop to check on THE DARK NET (trademarked) for what they have in store.\n\n"
             "WELCOME [Name] TO THE DARK NET (trademarked)\nTO REWARD YOUR FIDELITY YOUR NEXT PURCHASE WILL BE ENTIRELY FREE (EXCLUDING DELIVERY)\n\n"
             "Well, that's convenient.\nNow, what do we want to get?\n\n"
-            "(1) SPACE-WARP GRENADE\n(2) SHORT-RANGE TELEPORTER (ONE-USE ONLY)\n(3) QUANTUM KNIFE\n(4) PLUSHIE OF A PIG MADE OUT OF SALAD\n"
+            "(1) SPACE-WARP GRENADE\n(2) SHORT-RANGE TELEPORTER\n(3) QUANTUM KNIFE\n(4) PLUSHIE OF A PIG MADE OUT OF SALAD\n"
             "(5) NOTHING, I AM TOO DUMB TO SHOP HERE";
         cout << replaceValue(message, name) << endl;
         cin >> choice;
@@ -364,7 +385,7 @@ int main()
 			"but from what you could gather, they are trying to maximize the energy output of a \"Black hole energy generator\".", specie) << endl;
 	#pragma endregion
 
-        Friend best_friend;
+        Friend best_friend = Friend::None;
 
 	#pragma region Chapter3_Sedentarity
         chapter("Chapter 3 - Sedentarity");
@@ -439,6 +460,7 @@ int main()
                 	"His goals are purely utopist, completing this would allow near-unlimited resources for civilizations to thrive on.\n"
                 	"Of course, one doesn't have to be a genius to realize this could also be turned into a bomb really easily.\n"
                 	"+Friend: Niou Ton" << endl;
+                best_friend = Friend::Lead_Scientist;
             }
             else
             {
@@ -557,23 +579,212 @@ int main()
         cout << "Now you're ready." << endl;
 	#pragma endregion
 
-	#pragma region Chapter5_Action_TODO
-	        chapter("Chapter 5 - Action");
-	#pragma endregion
+        Ending ending;
 
-	#pragma region Chapter6_Conclusion_TODO
+	#pragma region Chapter5_Action
+		chapter("Chapter 5 - Action");
 
-	#pragma endregion
+        cout << "It is time, all the conditions are as ideal as they are going to get.\n"
+			"Today, you'll complete this last mission and probably retire afterwards." << endl;
 
-	#pragma region GameOver
-	        //End the game and ask if they want to play again
-	        printSpace();
-	        cout << "You died.\n(Or had a sort of similar fate, i.e. you lost)\nDo you want to play again?(Y/N)" << endl;
-	        cin >> answer;
-	        if (answer != "Y")
+        //Teleporter leads directly to schematics fight
+        if (plan == Plan::teleporter)
+        {
+            cout << "You find a quiet spot to fiddle with the teleporter until you lock it on the position that interests you the most :\n"
+                "The control room of the black hole project.\n"
+        		"That's where schematics are the most likely to be stored as well as useful data.\n"
+        		"Fwoomp, a blu light surrounds and folds you until you collapse on yourself.\n"
+        		"You can't resist closing your eyes and when you open them, you find yourself in the control room\n" << endl;
+        }
+        //Else the guards have to be "dealt with"
+        else
+        {
+            //Confirm that explosive is planted, if it were
+            if (plan == Plan::rig)
+            {
+                cout << "Before diving in, <ou verify that your grenade still responds to your transmitter and it appears to be the case." << endl;
+            }
+
+            // check if guards are there
+            if (plan == Plan::guards)
+            {
+                cout << "As planned, there is nearly no-one. Well, there is A soldier here, standing watch.\n"
+            		"Annoyingly enough, he spotted you. He says hi. You could try to fight him. In fact, there isn't any other way to pass him quickly."
+            		<< endl;
+
+                //if no knife, lose
+                if (tool != Tool::Knife)
+                {
+                    cout << "You jump at him before he can react he...\n"
+                		"BANG\n"
+                		"He did have the time to react.\n"
+                		"Speaking of time, you barely have enough of it to look at the hole in your chest before your corpse flops to the ground."
+                		<< endl;
+                    gameOver = true;
+                    continue;
+                }
+
+                cout << "Your reflexes aren't that great, but as soon as you touch the knife, it practically moves on its own.\n"
+                	"In a quick swing, you neatly cut his two arms and three of them fly off.\n"
+                	"You never understood how these knives worked.\n"
+                	"Blood's gushing all over the place and you finish him off before he can sound the alarm or realize that he's about to die."
+                	<< endl;
+
+                cout << "You now simply make your way in the empty test chamber towards the control room, passing by the generator." << endl;
+            }
+            //Sneak by the ducts normally
+            else
+            {
+                cout << "Without any fancy tricks, you just have to rely on good old techniques.\n"
+                    "You locate a nice air duct that should connect up to control room.\n"
+                    "After a careful removal of the vent, you crawl your way in complete silence, until you come to an intersection.\n"
+                    "You could go any of three ways\n" << endl;
+                // One path out of three succeeds
+                do
+                {
+                    cout << "Left (l), Straight (s), Right (r)\n"
+                        "You feel lucky today." << endl;
+                    cin >> answer;
+
+                    if (answer == "l" || answer == "r")
+                    {
+                        cout << "You must have taken a wrong turn somewhere, you don't think this is heading int the right direction...\n"
+                            "PSHHHHHHH\n"
+                    		"Something was just sent into the vent, the exhaust from some tests.\n"
+                    		"You don't have enough time to estimate what it is, it melts you before then.\n"
+                    		"Quite the nasty substance" << endl;
+                        gameOver = true;
+                        break;
+                    }
+                } while (answer != "s");
+
+                //Check for death
+                if (gameOver)
+                {
+	                continue;
+                }
+
+                //success
+                cout << "You finally find the vent right above the control room.\n"
+            		"You knew you were lucky.\n"
+            		"You pop off the last barrier between you and the schematics and hop down in the room..." << endl;
+            }
+        }
+
+        printSpace();
+
+        //Schematics room fight or talk to Niou Ton
+        cout << "You look around and see piles and piles of tablets, lots of lines of data on various monitors and a few data disks.\n"
+            "But you also spot Niou Ton in the room with you, he wasn't supposed to be there now.\n"
+            "He looks as startled by your entrance as you are by his presence." << endl;
+
+        //cheeky line if friends
+        if (best_friend == Friend::Lead_Scientist)
+            cout << replaceValue("[Name]?", name);
+        else
+            cout << "Who are you?";
+
+        //talk or fight
+        do
+        {
+            cout << "Fight or Talk? (f/t)" << endl;
+            cin >> answer;
+        } while (answer != "f" && answer != "t");
+        //talk
+        if (answer == "t")
+        {
+            //Idealist ending potential
+	        if (best_friend == Friend::Lead_Scientist)
 	        {
-	            break;
+                cout << "He asks what it is that you are doing here.\n"
+                    "You don't answer.\n"
+                    "He figures out you're here for the technology.\n"
+                    "He takes a moment to process the information. You tell him to take a seat. He does.\n"
+                    "He asks if you are from the federation.\n"
+                    "You nod.\n"
+                    "He laughs for a bit. You ask him what's funny. He says that you probably think you're doing a good thing.\n"
+                    "You answer that you don't like bringing morals into the job.\n"
+                    "He insists that you try.\n"
+                    "You argue that his company is known to manufacture weapons and that this bomb will be far bigger than a traditional supernova one.\n"
+                    "He retorts that the Federation would use it in much the same way, besides, who said it was a bomb.\n"
+                    "You raise an eyebrow that signifies the rhetorical question 'Is it impossible to make it into a bomb?'\n"
+                    "He answers that of course it is possible, but this isn't what is at stake here.\n"
+                    "Perplexed, you ask what is at stakes here then?\n"
+                    "The fate of civilization.\n"
+                    "Wow, that's a lot. But how?\n"
+                    "Well, the generator can provide energy for entire empires from black holes. Black holes are the last things that will die in the universe\n"
+                    "When there will be nothing left, they will ensure that intelligent life continues continues.\n"
+                    "Also, their development requires a few resources that are soon to be the resource's equivalent of extinct at a universe scale.\n"
+                    "So now is the only time where this technology can be made?\n"
+                    "Exactly.\n"
+                    "You refrain yourself from asking about the mysterious disappearance of the pronouns since they have returned.\n"
+                    "You ask about the whole weapon dealer bomb thing though.\n"
+                    "He says he never even planned on giving it to them, he planned to run away and distribute the schematics for the generator to everyone.\n"
+                    "Wouldn't that make everyone able to make very dangerous bombs?\n"
+                    "Yes, that is the price to pay, sadly." << endl;
+
+                cout << "\n(1) You can help him with his vision.\n(2) Or make sure it never exits the station.";
+                do
+                {
+                    cin >> answer;
+                } while (answer != "1" && answer != "2");
+
+                //End the game if 1
+                cout << "You extend your hand to his.\nA simple gesture, but he understands" << endl;
+                ending = Ending::idealist;
 	        }
+            // Death
+            else
+            {
+                cout << "It would appear that he wasn't really too keen on talking and his previous question was more out of surprise than curiosity.\n"
+                    "You don't see where it came from, but you feel it, an intense shock that caught you off guard goes through your whole body.\n"
+                    "Every one of your muscles twitches with great force.\n"
+            		"It will be a minute before you finally collapse on the floor and an hour before you become motionless.\n"
+            		"Your brain, however, was fried in the first few seconds and you died standing." << endl;
+                gameOver = true;
+                continue;
+            }
+        }
+        //fight
+        else
+        {
+            cout << "You draw your weapon as his suit starts to crackle with electricity." << endl;
+            if (tool == Tool::Knife)
+            {
+                cout << "You must admit that his suit is nice, but it is no match for a knife that transcends time, or something like that.\n"
+            		"In any case, you slash after he starts to move, but it doesn't matter, he is already cut in half.\n"
+            		"You watch as the most brilliant mind you've ever met becomes two then zero. The deed is done.\n"
+            		"From there on, it's just a formality.\n"
+            		"You steal everything that there is to be stolen and set the generator to explode in an hour.\n"
+            		"It was, in fact, remarkably easy to turn the generator into a bomb, you thought to yourself as you hopped onto a mining ship.\n"
+            		"This mission wasn't too hard, you think, just had to pick the right tools." << endl;
+                ending = Ending::sacrifice;
+            }
+            else if (plan == Plan::rig)
+            {
+                cout << "You're no match for him, you don't even have time to move that lightning arcs from his arms and plunges into your heart.\n"
+                    "There is one last thing you can do as your feet gives out.\n"
+                    "You pull out your detonator and uses it.\n"
+                    "You're not here anymore to witness the carnage. No one were." << endl;
+                ending = Ending::sacrifice;
+            }
+            else
+            {
+                cout << "You don't really have any fancy gadget on you right now that could help you deal with him.\n"
+            		"It's a shame that you didn't prepare for a bossfight because he clearly did.\n"
+            		"He grabs you by the hand and electricity pours into your skull until you feel your head explode.\n"
+            		"It actually did explode, it was a mess for joe, the janitor, to clean up.\n"
+            		"Not that you would know, since you were, at the time, very busy being splattered all overs the monitors." << endl;
+                gameOver = true;
+                continue;
+            }
+        }
+
 	#pragma endregion
-	}
+
+	#pragma region Chapter6_Conclusion
+
+        break;
+	#pragma endregion
+    } while (playAgain());
 }
