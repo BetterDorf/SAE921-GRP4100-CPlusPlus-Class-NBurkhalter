@@ -648,7 +648,7 @@ int main()
 
                     if (answer == "l" || answer == "r")
                     {
-                        cout << "You must have taken a wrong turn somewhere, you don't think this is heading int the right direction...\n"
+                        cout << "You must have taken a wrong turn somewhere, you don't think this is heading in the right direction...\n"
                             "PSHHHHHHH\n"
                     		"Something was just sent into the vent, the exhaust from some tests.\n"
                     		"You don't have enough time to estimate what it is, it melts you before then.\n"
@@ -680,7 +680,7 @@ int main()
 
         //cheeky line if friends
         if (best_friend == Friend::Lead_Scientist)
-            cout << replaceValue("[Name]?", name);
+            cout << replaceValue("[Name]?", name) << endl;
         else
             cout << "Who are you?" << endl;
 
