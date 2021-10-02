@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{179bee1a-3faa-45ea-9b71-8ff41d7521fc}</ProjectGuid>
-    <RootNamespace>My03exoVector21</RootNamespace>
+    <ProjectGuid>{1c9e52a1-d04e-48b8-8440-2e0dbf996c5b}</ProjectGuid>
+    <RootNamespace>My03Formativrouletterussealternativ</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="03 - exo - Vector - 2.1.cpp" />
+    <ClCompile Include="03 - Formativ - roulette russe alternativ.cpp" />
+    <ClCompile Include="guns.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="guns.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

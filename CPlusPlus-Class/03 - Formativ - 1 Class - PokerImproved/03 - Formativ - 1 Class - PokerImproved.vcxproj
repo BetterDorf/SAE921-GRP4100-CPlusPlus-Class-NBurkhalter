@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5ff293a1-7712-4b37-a116-6df40793845f}</ProjectGuid>
-    <RootNamespace>My03Formativroulettevariante</RootNamespace>
+    <ProjectGuid>{687c4e3a-4cd2-46ef-adeb-fc202f1244b2}</ProjectGuid>
+    <RootNamespace>My03Formativ1ClassPokerImproved</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="03 - Formativ - roulette variante.cpp" />
+    <ClCompile Include="03 - Formativ - 1 Class - PokerImproved.cpp" />
+    <ClCompile Include="Card.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Card.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
