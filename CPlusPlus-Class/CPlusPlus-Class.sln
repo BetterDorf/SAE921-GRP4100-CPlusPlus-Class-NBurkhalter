@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04", "04", "{54D4695D-7C7E-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 2 - OOP - Point", "04 - Exercice 2 - OOP - Point\04 - Exercice 2 - OOP - Point.vcxproj", "{CF59C4B1-0EAE-4B40-B969-64B7558FAE00}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 3 - OOP - Car2", "04 - Exercice 3 - OOP - Car2\04 - Exercice 3 - OOP - Car2.vcxproj", "{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -181,6 +183,14 @@ Global
 		{CF59C4B1-0EAE-4B40-B969-64B7558FAE00}.Release|x64.Build.0 = Release|x64
 		{CF59C4B1-0EAE-4B40-B969-64B7558FAE00}.Release|x86.ActiveCfg = Release|Win32
 		{CF59C4B1-0EAE-4B40-B969-64B7558FAE00}.Release|x86.Build.0 = Release|Win32
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Debug|x64.ActiveCfg = Debug|x64
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Debug|x64.Build.0 = Debug|x64
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Debug|x86.ActiveCfg = Debug|Win32
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Debug|x86.Build.0 = Debug|Win32
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Release|x64.ActiveCfg = Release|x64
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Release|x64.Build.0 = Release|x64
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Release|x86.ActiveCfg = Release|Win32
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -202,6 +212,7 @@ Global
 		{687C4E3A-4CD2-46EF-ADEB-FC202F1244B2} = {9B43D59D-A7C2-4805-8EF7-BEDAB7CF7F5C}
 		{522ED691-05C6-4897-82DA-801701218C79} = {54D4695D-7C7E-45CF-A7AC-F08995D31BCE}
 		{CF59C4B1-0EAE-4B40-B969-64B7558FAE00} = {54D4695D-7C7E-45CF-A7AC-F08995D31BCE}
+		{ABAFFEEE-F225-4DAC-903D-3BE5840CC7A8} = {54D4695D-7C7E-45CF-A7AC-F08995D31BCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03B864E3-B50F-49C9-8BC8-55681D25B674}
