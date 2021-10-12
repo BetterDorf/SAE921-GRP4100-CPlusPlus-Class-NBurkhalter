@@ -2,8 +2,8 @@
 class Point
 {
 public:
-	int x;
-	int y;
+	float x;
+	float y;
 
 	Point();
 	Point(int x_, int y_);
@@ -13,4 +13,7 @@ public:
 	void Set();
 
 	float Distance(Point p2);
+
+	Point operator+(Point& p2);
+	bool operator>(Point& p2);
 };

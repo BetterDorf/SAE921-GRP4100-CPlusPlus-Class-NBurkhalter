@@ -16,4 +16,11 @@ int main()
 
     cout << "Distance between points:" << endl;
     cout << p1.Distance(p2);
+
+    if (p1 > p2)
+    {
+        cout << "P1 plus grand que p2" << endl;
+    }
+
+    cout << (p1 + p2).x << (p1 + p2).y;
 }
