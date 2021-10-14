@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{40f55af9-17fb-4ba9-b284-35cca9cf0b37}</ProjectGuid>
-    <RootNamespace>My04ExerciceOOPInventory</RootNamespace>
+    <ProjectGuid>{2e58bbae-207b-4c20-9645-79c19b2a7b77}</ProjectGuid>
+    <RootNamespace>My04FormativOOPSolarSystem</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>04 - Exercice9 - OOP - Inventory</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,28 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="04 - Exercice - OOP - Inventory.cpp" />
-    <ClCompile Include="Bow.cpp" />
-    <ClCompile Include="ForcePotion.cpp" />
-    <ClCompile Include="HealthPotion.cpp" />
-    <ClCompile Include="Inventory.cpp" />
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="Potion.cpp" />
-    <ClCompile Include="Sword.cpp" />
-    <ClCompile Include="Weapon.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Bow.h" />
-    <ClInclude Include="ForcePotion.h" />
-    <ClInclude Include="Header.h" />
-    <ClInclude Include="HealthPotion.h" />
-    <ClInclude Include="Inventory.h" />
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="Potion.h" />
-    <ClInclude Include="Sword.h" />
-    <ClInclude Include="Weapon.h" />
+    <ClCompile Include="04 - Formativ - OOP - Solar System.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

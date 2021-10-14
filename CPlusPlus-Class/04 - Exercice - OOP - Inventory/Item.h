@@ -4,5 +4,5 @@
 class Item
 {
 public:
-	virtual void use();
+	virtual void use() = 0;
 };

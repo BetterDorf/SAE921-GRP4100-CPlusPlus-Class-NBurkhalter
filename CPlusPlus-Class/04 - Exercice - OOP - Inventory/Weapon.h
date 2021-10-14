@@ -3,9 +3,9 @@
 
 class Weapon : public Item
 {
-	virtual void equip(){}
+	virtual void equip() = 0;
 
-	virtual void attack(){}
+	virtual void attack() = 0;
 public:
 	void use() override;
 };
