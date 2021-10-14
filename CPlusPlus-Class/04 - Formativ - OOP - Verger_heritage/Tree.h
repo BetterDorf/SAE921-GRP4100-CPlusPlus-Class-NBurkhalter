@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <random>
 
 class Tree
@@ -8,8 +9,8 @@ protected:
 	float fruit_weight_ = 0; //Intrisinc weight of this tree's fruit
 
 	//The range of fruits that can be made
-	int min = 0;
-	int max = 0;
+	int min_ = 0;
+	int max_ = 0;
 
 public:
 	void grow(); //Generate a random amount of fruits in range_

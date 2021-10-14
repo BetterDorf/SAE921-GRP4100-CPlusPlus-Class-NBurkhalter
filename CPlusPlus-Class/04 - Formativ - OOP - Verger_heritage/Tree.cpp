@@ -5,7 +5,7 @@
 void Tree::grow()
 {
 	//Generate a random amount of fruits in the range
-	fruits_ = rand() % (max - min) + min;
+	fruits_ = rand() % (max_ - min_) + min_;
 }
 
 float Tree::harvest()
