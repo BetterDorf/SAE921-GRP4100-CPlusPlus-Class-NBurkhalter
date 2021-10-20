@@ -154,7 +154,7 @@
   <ItemGroup>
     <ClInclude Include="Bow.h" />
     <ClInclude Include="ForcePotion.h" />
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="ItemClasses.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />

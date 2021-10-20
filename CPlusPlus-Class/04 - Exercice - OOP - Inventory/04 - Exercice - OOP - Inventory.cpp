@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "ItemClasses.h"
 
 using namespace std;
 
@@ -47,6 +47,7 @@ int main()
 				break;
 			case 'm':
 				inv.add(make_unique<Map>(Map()));
+				break;
 			default:
 				break;
 			}
@@ -63,5 +64,6 @@ int main()
 			} while (index < 0);
 			inv.use(index);
 		}
+		cout << endl;
 	}
 }

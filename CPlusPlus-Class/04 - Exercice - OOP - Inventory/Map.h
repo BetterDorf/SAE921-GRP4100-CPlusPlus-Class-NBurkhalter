@@ -5,5 +5,7 @@ class Map :
     public Item
 {
     void use() override { std::cout << "You looked at your map" << std::endl; }
+public:
+    Map() { name_ = "Map"; }
 };
 
