@@ -61,7 +61,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Formativ - OOP - Solar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06", "06", "{D3132520-7128-46BE-BC3F-5CF9C50ADEF9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - Program structure - Exercice 2 - Function pointer", "..\..\SAE921-GRP4100-CPlusPlus-Class-SALBERT\CPlusPlus-Class\06 - Program structure - Exercice - Function pointer\06 - Program structure - Exercice - Function pointer.vcxproj", "{F75D8B45-ADDF-44CC-9D98-80C19CDBF1BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - Program structure - Exercice 2 - Function pointer", "06 - Program structure - Exercice - Function pointer\06 - Program structure - Exercice - Function pointer.vcxproj", "{F75D8B45-ADDF-44CC-9D98-80C19CDBF1BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
