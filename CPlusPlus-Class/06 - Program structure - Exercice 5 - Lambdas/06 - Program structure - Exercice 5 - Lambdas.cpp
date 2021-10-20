@@ -14,6 +14,11 @@ int main()
     // Use what you learned from previous exercice
 	// Use another lambda to substract and display into a for_each algorithm
     // Fill brackets with some code
-    std::for_each(numbers.begin(), numbers.end(), [&](int num){bigNumber -= num;std::cout << bigNumber << std::endl;});
+    std::for_each(numbers.begin(), numbers.end(),
+        [&bigNumber](int num)
+        {
+	        bigNumber -= num;
+        	std::cout << bigNumber << std::endl;
+        });
 
 }
